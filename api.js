@@ -45,6 +45,7 @@ function getusers() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 var data = JSON.parse(xhr.responseText);
+                console.log(data);
                 var container = document.getElementById('cardContainer');
 
                 // Clear existing cards
@@ -94,9 +95,10 @@ function query() {
                                 <thead>
                                     <tr>
                                         <th scope="col">ID</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Email</th>
                                         <th scope="col">Address</th>
                                         <th scope="col">Education</th>
-                                        <th scope="col">Gmail</th>
                                         <th scope="col">Department</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -104,9 +106,10 @@ function query() {
                                 <tbody>
                                     <tr>
                                         <th scope="row">${obj.ID}</th>
+                                        <th scope="row">${obj.Username}</th>
+                                        <th scope="row">${obj.Email}</th>
                                         <td><small>${obj.Address}</small></td>
                                         <td><small>${obj.Education}</small></td>
-                                        <td><small>${obj.Gmail}</small></td>
                                         <td><small>${obj.Department}</small></td>
                                         <td>
                                         <div class="d-flex justify-content-between">
